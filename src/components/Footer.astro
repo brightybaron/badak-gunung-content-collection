@@ -1,0 +1,55 @@
+<footer class="bg-gray-100 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-y-0 gap-y-8"
+    >
+      <div class="gap-y-2">
+        <h3 class="text-lg font-bold underline mb-2">For Travellers</h3>
+        <div class="flex flex-col gap-y-2">
+          {
+            [
+              { page: "About", url: "/about" },
+              { page: "FAQ", url: "/faq" },
+              { page: "Terms & Conditions", url: "/faq#terms-conditions" },
+              {
+                page: "Our Gallery",
+                url: "https://www.instagram.com/badakgunung/",
+              },
+            ].map((link) => (
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.page}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <p class="text-lg font-bold underline mb-2">Our Office</p>
+        <address class="space-y-2 font-medium not-italic">
+          Pongangan, Manyar, Gresik, Jawa Timur
+          <br />
+          Phone: <a
+            href="https://wa.me/6285226822944"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +62 852 2682 2944
+          </a>
+          <br />
+          Email: <a
+            href="mailto:rekayodolan@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            rekayodolan@gmail.com
+          </a>
+        </address>
+      </div>
+    </div>
+    <div class="mt-8 py-8">
+      <p class="text-sm">
+        &copy; {new Date().getFullYear()} Badak Gunung - Travel with Style.
+      </p>
+    </div>
+  </div>
+</footer>

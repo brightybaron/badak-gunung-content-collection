@@ -1,0 +1,217 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+// import Kard from "@components/Kard.astro";
+import { IconPaperPlane } from "@components/Icons";
+import TypingText from "@components/TypingText.astro";
+import Card from "@components/Card.astro";
+
+// Hero.astro
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const {
+  title = "Badak Gunung",
+  subtitle = "Temukan pengalaman terbaik dalam layanan kami yang berkualitas",
+  description = "Discover, Book and Enjoy Your Journey!",
+} = Astro.props;
+
+const features = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16">
+      <path fill="#FF6B6B" d="M12 3C7.58 3 4 6.58 4 11c0 4.42 3.58 8 8 8s8-3.58 8-8c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-3.31 2.69-6 6-6s6 2.69 6 6c0 3.31-2.69 6-6 6z"/>
+      <path fill="#87CEEB" d="M12 5C8.69 5 6 7.69 6 11c0 3.31 2.69 6 6 6s6-2.69 6-6c0-3.31-2.69-6-6-6z"/>
+      <path fill="#FFD700" d="M12 7c-2.21 0-4 1.79-4 4 0 2.21 1.79 4 4 4s4-1.79 4-4c0-2.21-1.79-4-4-4z"/>
+    </svg>`,
+    title: "Save Money",
+    description:
+      "Dapatkan paket liburan yang affordable dengan fasilitas yang beragam",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16">
+      <path fill="#FF6B6B" d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/>
+      <path fill="#FFD700" d="M18 14h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/>
+    </svg>`,
+    title: "Get Help",
+    description:
+      "Liburanmu akan terasa lebih menyenangkan dengan ditemani crew yang ramah dan helpful",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-16 h-16">
+      <path fill="#4A90E2" d="M20 6h-3V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM9 4h6v2H9V4zm11 15H4V8h16v11z"/>
+      <path fill="#FF6B6B" d="M13 10h-2v3H8v2h3v3h2v-3h3v-2h-3z"/>
+    </svg>`,
+    title: "Stay Safe",
+    description:
+      "Kami pastikan setiap tamu yang berlibur dapat merasakan liburan yang aman dan nyaman",
+  },
+];
+
+import { getCollection } from "astro:content";
+
+const paketData = await getCollection("paket");
+
+const cardData = (entry: any) => ({
+  image: entry.data.images[0].url,
+  title: entry.data.title,
+  slug: entry.id,
+  jenistrip: entry.data.jenistrip,
+  durasi: entry.data.itineraries.length,
+  price: entry.data.price,
+  itineraries: entry.data.itineraries,
+});
+---
+
+<MainLayout>
+  <section class="relative h-screen w-full">
+    <div
+      class="carousel-container absolute inset-0 w-full h-screen overflow-hidden"
+    >
+      {
+        [
+          "/images/hero.jpg",
+          "/images/bromo1.jpg",
+          "/images/bromo2.jpeg",
+          "/images/bromo3.jpg",
+          "/images/bromo4.png",
+        ].map((image: any, index: number) => (
+          <div
+            class={`carousel-slide absolute inset-0 w-full h-screen bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === 0 ? "opacity-100" : "opacity-0"}`}
+            style={`background-image: url(${image})`}
+            data-index={index}
+          >
+            <div class="absolute inset-0 bg-black/50" />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-center h-full max-w-xl">
+        <div class="space-y-6">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+          >
+            {title}
+          </h1>
+          <p class="text-base md:text-lg text-gray-200">
+            {subtitle}
+          </p>
+          <div
+            class="inline-flex items-center text-base md:text-lg text-gray-300 h-1"
+          >
+            <TypingText typedText={description} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-extrabold text-gray-900 sm:text-4xl">
+            Best Choices
+          </h2>
+          <p class="mt-1 text-gray-500">Check our best trip!</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6">
+          {
+            paketData.length === 0 ? (
+              <div class="col-span-4">
+                <p class="text-center">Tidak tersedia paket wisata</p>
+              </div>
+            ) : (
+              paketData
+                .sort(
+                  (
+                    a: { data: { title: string } },
+                    b: { data: { title: any } }
+                  ) => a.data.title.localeCompare(b.data.title)
+                )
+                .slice(0, 3)
+                .map((entry: any) => <Card {...cardData(entry)} />)
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+        >
+          Why Travel with Badak Gunung?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {
+            features.map((feature) => (
+              <div class="flex flex-col items-center text-center">
+                <div class="mb-4" set:html={feature.icon} />
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                  {feature.title}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-center text-3xl md:text-7xl font-bold text-deep-blue font-sarina -rotate-[2deg]"
+        >
+          Travel with Style!
+        </h2>
+        <div class="mt-8 max-w-7xl flex justify-center mx-auto sm:px-12 px-6">
+          <a
+            href="/paket"
+            class="hover:bg-deep-blue hover:text-white hover:scale-105 font-medium px-4 py-2 rounded transition-all duration-200 inline-flex items-center gap-x-1"
+          >
+            <span class="inline-flex">
+              <IconPaperPlane />
+            </span>
+            Get Your Trip!</a
+          >
+        </div>
+      </div>
+    </section>
+  </section>
+</MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Carousel logic
+    const slides = document.querySelectorAll(".carousel-slide");
+    const slideCount = slides.length;
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove("opacity-100");
+      slides[currentSlide].classList.add("opacity-0");
+
+      currentSlide = (currentSlide + 1) % slideCount;
+
+      slides[currentSlide].classList.remove("opacity-0");
+      slides[currentSlide].classList.add("opacity-100");
+    }
+
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+<style>
+  .carousel-slide {
+    transition: opacity 1s ease;
+  }
+</style>

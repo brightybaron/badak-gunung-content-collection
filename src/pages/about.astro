@@ -1,0 +1,71 @@
+---
+import { IconMapPinHouse, IconChat, IconMail } from "@components/Icons";
+import MainLayout from "@layouts/MainLayout.astro";
+---
+
+<MainLayout pageTitle="About">
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 sm:px-6">
+    <div class="flex sm:flex-row flex-col gap-4">
+      <div
+        class="flex flex-shrink-0 sm:w-1/4 mx-auto items-center justify-center sm:mb-0 mb-8"
+      >
+        <img src="/logo.png" alt="logo badak gunung" class="w-28 h-28" />
+      </div>
+      <div>
+        <p class="text-xl font-bold mb-4">About Us</p>
+        <p>
+          Berdiri sejak awal Agustus 2020, Badak Gunung Adventure bergerak dalam
+          bidang pariwisata yang beroperasi di Jawa Timur, khususnya di Kota
+          Malang dan sekitarnya. Biro wisata ini dibentuk oleh beberapa nama
+          yang berdedikasi dengan profesional tinggi dalam bidang pariwisata dan
+          pengetahuan terhadap setiap destinasi yang menjadi wilayah layanan
+          wisata di Badak Gunung Adventure.
+        </p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 grid-cols-1 mt-12">
+      <div class="col-span-1">
+        <p class="text-2xl underline font-semibold mb-2">Our Office</p>
+        <p class="text-xl font-bold">Gresik</p>
+        <ul class="my-4 ml-4 space-y-2">
+          <li class="flex items-center gap-x-2">
+            <IconMapPinHouse /> Pongangan, Manyar, Gresik
+          </li>
+          <li class="flex items-center gap-x-2">
+            <IconChat />
+            <a
+              href="https://wa.me/6285157276433"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +62 851 5727 6433
+            </a>
+          </li>
+          <li class="flex items-center gap-x-2">
+            <IconMail />
+            <a
+              href="mailto:rekayodolan@gmail.com"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              rekayodolan@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <iframe
+          title="Lokasi Kantor Badak Gunung Adventure di Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2027928.7027891946!2d113.58324044999999!3d-6.914709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDgnMzIuMSJTIDExMsKwMzYnMzIuMSJF!5e0!3m2!1sen!2sid!4v1719382966884!5m2!1sen!2sid"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrer-policy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</MainLayout>

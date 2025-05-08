@@ -1,0 +1,27 @@
+---
+import Footer from "@components/Footer.astro";
+import Navbar from "@components/Navbar";
+import "@styles/global.css";
+
+const { pageTitle } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/" ? true : false;
+---
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{isHome ? "Home" : pageTitle} | Badak Gunung</title>
+  </head>
+  <body>
+    <Navbar currentPath={currentPath} client:load />
+    <div class={isHome ? "mt-0" : "sm:mt-20 mt-18"}></div>
+    <main class="pb-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

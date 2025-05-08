@@ -1,0 +1,67 @@
+---
+const { typedText } = Astro.props;
+---
+
+<span id="typed-text" typed-items={typedText}></span>
+<span id="cursor" class="animate-pulse">|</span>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const typedTextElement = document.getElementById("typed-text");
+    const text = typedTextElement?.getAttribute("typed-items");
+    const cursorElement = document.getElementById("cursor");
+
+    let charIndex = 0;
+    let isDeleting = false;
+    let textToType = "";
+
+    // Typing effect
+    function typeEffect() {
+      if (isDeleting) {
+        textToType = text!.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        textToType = text!.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (typedTextElement && cursorElement) {
+        typedTextElement.textContent = textToType;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 50;
+
+      if (!isDeleting && charIndex === text!.length) {
+        setTimeout(() => {
+          isDeleting = true;
+        }, 50);
+
+        return setTimeout(typeEffect, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+
+        return setTimeout(typeEffect, 500);
+      }
+
+      setTimeout(typeEffect, typeSpeed);
+    }
+
+    setTimeout(typeEffect, 1000);
+  });
+</script>
+
+<style>
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  #cursor {
+    animation: blink 1s step-end infinite;
+  }
+</style>

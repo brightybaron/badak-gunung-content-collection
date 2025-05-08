@@ -1,0 +1,96 @@
+{
+  "title": "Bromo Midnight Trip & Air Terjun Tumpak Sewu",
+  "slug": "bromo-midnight-trip",
+  "jenistrip": "Private",
+  "meetingpoint": ["Lamongan", "Gresik", "Surabaya", "Malang"],
+  "location": "Bromo",
+  "descriptions": [
+    {
+      "text": "Exploring the fascinating landscape of Mountain Bromo by riding 4x4 vehicle. Take amount of pictures with breathtaking views in the background."
+    },
+    {
+      "text": "Kamu dapat menikmati dan mengeksplorasi keindahan Gunung Bromo yang terkenal di Jawa Timur dengan mengikuti Paket Trip Wisata Gunung Bromo yang telah kami sediakan."
+    },
+    {
+      "text": "Paket Trip Wisata Gunung Bromo ini cocok untuk kamu yang ingin menikmati keindahan Gunung Bromo dengan grup/rombongan anda sendiri."
+    }
+  ],
+  "images": [
+    { "url": "/bromo2.jpeg" },
+    { "url": "/bromo1.jpg" },
+    { "url": "/bromo3.jpg" },
+    { "url": "/bromo4.png" }
+  ],
+  "destinasi": [
+    "Sunrise View Point",
+    "Bukit Widodaren",
+    "Kawah Bromo",
+    "Pura Luhur Poten",
+    "Pusung Gede/Lautan Pasir",
+    "Lembah Watangan/Savana Teletubbies"
+  ],
+  "itineraries": [
+    {
+      "items": [
+        {
+          "time": "23.30",
+          "details": "Penjemputan di Malang Kota"
+        },
+        {
+          "time": "00.30",
+          "details": "Perjalanan menuju Kawasan Bromo"
+        },
+        {
+          "time": "03.30",
+          "details": "Tiba di Surise View Point"
+        },
+        {
+          "time": "04.30",
+          "details": "Menikmati sunrise"
+        },
+        {
+          "time": "06.00",
+          "details": "Menuju Bukit Widodaren"
+        },
+        {
+          "time": "07.00",
+          "details": "Menuju Kawah Bromo dan Pura Luhur Poten"
+        },
+        {
+          "time": "08.30",
+          "details": "Menuju Pusung Gede/Lautan Pasir"
+        },
+        {
+          "time": "09.00",
+          "details": "Menuju Lembah Watangan/Savana Teletubbies"
+        },
+        {
+          "time": "10.00",
+          "details": "Perjalanan kembali menuju Malang Kota"
+        },
+        {
+          "time": "12.00",
+          "details": "Tiba di Malang kota. Explore Bromo berakhir. Sayonara!"
+        }
+      ],
+      "title": "Explore Bromo"
+    }
+  ],
+  "price": ["380", "465", "570", "720", "1140"],
+  "fasilitas": {
+    "include": [
+      "Tiket masuk",
+      "Jip Bromo",
+      "Penjemputan Malang Kota",
+      "Air mineral 1x",
+      "Guide lokal",
+      "Sopir"
+    ],
+    "exclude": [
+      "Makan selama trip",
+      "Keperluan Pribadi",
+      "Sewa kuda / jaket di Bromo",
+      "Dokumentasi foto"
+    ]
+  }
+}
