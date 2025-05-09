@@ -1,7 +1,149 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import Accordion from "@components/Accordion";
+
+const faqContent = [
+  {
+    title: "Apakah ada biaya tambahan selain harga yang tertera di paket?",
+    items: [
+      {
+        details:
+          "Tidak ada, kami memaparkan harga yang sebenarnya untuk setiap paket dalam layanan kami. Sehingga anda tidak perlu lagi khawatir akan adanya biaya tak terduga. Adapun biaya tambahan adalah biaya yang anda keluarkan untuk fasilitas tambahan di luar fasilitas yang kami berikan.",
+      },
+    ],
+  },
+  {
+    title: "Apakah itinerari bersifat mengikat kepada peserta?",
+    items: [
+      {
+        details:
+          "Tidak, itinerary digunakan sebagai gambaran umum mengenai waktu dan destinasi yang akan dituju. Pelaksanaan itinerary sangat bergantung pada beberapa faktor seperti, kondisi alam, cuaca, kondisi lalu lintas, serta berbagai hal dapat mempengaruhi jalannya trip.",
+      },
+    ],
+  },
+  {
+    title: "Bagaimana jika saya memiliki itinerary sendiri?",
+    items: [
+      {
+        details:
+          "Bisa, kami siap membantu anda membuat itinerary sesuai kebutuhan.Silakan konsultasi dengan kami melalui kontak yang tersedia.",
+      },
+    ],
+  },
+  {
+    title: "Bagaimana cara reservasi paket wisata di Badak Gunung?",
+    items: [
+      {
+        details:
+          "Cukup mudah, pilih paket wisata yang anda inginkan dan klik tombol pesan sekarang yang terhubung dengan kontak kami. Kemudian, kami akan memberikan formulir pendaftaran. Selanjutnya kami akan verifikasi pesanan dan mengirim bukti pemesanan melalui kontak kami. Selanjutnya, lakukan pembayaran DP/uang muka sebagain commitment fee.",
+      },
+    ],
+  },
+  {
+    title: "Bagaimana cara melakukan pembayaran di Badak Gunung?",
+    items: [
+      {
+        details:
+          "Membayar DP sebagai commitment fee minimal 50% dari total tagihan ke rekening yang tertera dalam bukti pemesanan atau dapat melunasinya sekaligus.",
+      },
+    ],
+  },
+  {
+    title: "Apa perbedaan Open Trip dan Private Trip?",
+    items: [
+      {
+        details:
+          "Open Trip adalah pergi liburan bersama orang lain yang mungkin belum anda kenal dalam sebuah grup dengan tujuan liburan yang sama. Keuntungannya, biaya trip/liburan lebih murah karena beban biaya trip akan dibagi rata dengan sesama peserta Open Trip.",
+      },
+      {
+        details:
+          "Sementara, Private Trip adalah pergi berlibur dengan melibatkan agen/biro perjalanan untuk mengurus perjalanan dan kebutuhan selama liburan. Peserta yang ikut dalam trip merupakan orang yang anda tentukan sendiri dan tidak ada orang lain di dalam trip ini karena bersifat private. Keuntungan Private Trip adalah pelayanan yang lebih maksimal dan waktu yang lebih fleksibel yang bisa diatur sesuai keinginan anda.",
+      },
+      {
+        details:
+          "Open Trip bisa diibaratkan seperti ketika kita naik kendaraan umum. Sementara, Private Trip seperti kita naik taksi yang lebih privat dan fleksibel.",
+      },
+    ],
+  },
+  {
+    title: "Apakah setiap destinasi wisata menyediakan paket Open Trip?",
+    items: [
+      {
+        details:
+          "Sayangnya kami belum bisa menyediakan paket Open Trip di semua paket wisata yang kami miliki.",
+      },
+    ],
+  },
+];
+
+const termsContent = [
+  {
+    title: "Ketentuan Pendaftaran dan Pembayaran",
+    items: [
+      {
+        details:
+          "Membayar uang muka/DP minimal 50% dari total tagihan atau dapat melunasinya sekaligus dan dibayarkan paling lambat 10 hari sebelum keberangkatan.",
+      },
+      {
+        details:
+          "Pelunasan biaya trip dibayarkan maksimal pada hari H sebelum berangkat trip.",
+      },
+      {
+        details:
+          "Badak Gunung berhak membatalkan trip dengan pertimbangan-pertimbangan tertentu di luar kemampuan kami dan uang DP peserta akan dikembalikan 100%.",
+      },
+      {
+        details:
+          "Itinerary/jadwal acara bisa berubah tergantung cuaca dan kondisi alam serta kondisi lalu lintas.",
+      },
+    ],
+  },
+  {
+    title: "Pembatalan dan Reschedule",
+    items: [
+      {
+        details:
+          "Tidak ada pengembalian uang muka/DP yang sudah dibayarkan oleh peserta trip yang membatalkan keikutsertaannya secara sepihak.",
+      },
+      {
+        details:
+          "Reschedule / pergantian jadwal trip diperkenankan, maksimal konfirmasi 7 hari sebelum keberangkatan. Kurang dari 7 hari peserta dianggap membatalkan trip secara sepihak.",
+      },
+      {
+        details:
+          "Jika terjadi pembatalan atau pergantian tanggal trip dikarenakan force majeur seperti bencana alam, penutupan tempat wisata atau sebab lain di luar kendali kami, maka biaya pendaftaran akan dikembalikan.",
+      },
+      {
+        details:
+          "Pembatalan dan penundaan trip hanya berlaku untuk jadwal trip low season.",
+      },
+      {
+        details:
+          "Pembatalan/penundaan trip pada high season, DP/uang muka tidak dapat dikembalikan.",
+      },
+    ],
+  },
+];
 ---
 
 <MainLayout pageTitle="FAQ">
-  <h1 class="sm:text-4xl text-2xl font-bold text-center">FAQ</h1>
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6">
+    <h1 class="sm:text-3xl text-xl font-bold text-center mb-4">
+      Most Frequently Asked
+    </h1>
+    <Accordion data={faqContent} faqPage={true} client:load />
+  </section>
+  <section
+    class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6 mt-12"
+    id="terms-conditions"
+  >
+    <h2 class="sm:text-3xl text-xl font-bold text-center my-4">
+      Syarat dan Ketentuan
+    </h2>
+    <Accordion data={termsContent} faqPage={true} client:load />
+  </section>
 </MainLayout>
+
+
+
+  
