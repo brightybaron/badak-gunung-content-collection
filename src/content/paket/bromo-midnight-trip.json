@@ -1,8 +1,8 @@
 {
-  "title": "Bromo Midnight Trip & Air Terjun Tumpak Sewu",
+  "title": "Bromo Midnight Trip",
   "slug": "bromo-midnight-trip",
   "jenistrip": "Private",
-  "meetingpoint": ["Lamongan", "Gresik", "Surabaya", "Malang"],
+  "meetingpoint": ["Malang"],
   "location": "Bromo",
   "descriptions": [
     {
@@ -16,10 +16,10 @@
     }
   ],
   "images": [
-    { "url": "/bromo2.jpeg" },
-    { "url": "/bromo1.jpg" },
-    { "url": "/bromo3.jpg" },
-    { "url": "/bromo4.png" }
+    { "url": "/bromo-2.webp" },
+    { "url": "/bromo-1.webp" },
+    { "url": "/bromo-3.webp" },
+    { "url": "/bromo-4.webp" }
   ],
   "destinasi": [
     "Sunrise View Point",

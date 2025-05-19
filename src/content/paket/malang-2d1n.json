@@ -1,0 +1,138 @@
+{
+  "title": "Malang 2D1N",
+  "slug": "malang-2d1n",
+  "jenistrip": "Private",
+  "meetingpoint": ["Malang"],
+  "location": "Malang",
+  "descriptions": [
+    {
+      "text": "Nikmati perjalanan seru ke Malang selama 2 hari 1 malam, menjelajahi destinasi menarik dengan pengalaman tak terlupakan. Rasakan kesejukan alam, kuliner khas, dan pesona wisata yang memanjakan mata."
+    },
+    {
+      "text": "Perjalanan mencakup kunjungan ke destinasi populer seperti Gunung Bromo, Museum Angkut, Coban Rondo hingga kuliner malam di Kota Malang. Dengan akomodasi nyaman dan transportasi yang siap mengantar, liburan Anda akan lebih menyenangkan dan bebas repot!"
+    }
+  ],
+  "images": [
+    {
+      "url": "/malang-trip-1.jpeg"
+    },
+    {
+      "url": "/malang-trip-2.jpeg"
+    },
+    {
+      "url": "/malang-trip-3.jpeg"
+    },
+    {
+      "url": "/bromo-5.webp"
+    }
+  ],
+  "destinasi": [
+    "Coban Rondo",
+    "Taman Labirin",
+    "Museum Angkut",
+    "Bromo Sunrise Point",
+    "Bukit Widodaren",
+    "Kawah Bromo",
+    "Pura Luhur Poten",
+    "Pusung Gede/Lautan pasir",
+    "Lembah Watangan/Savana Teletubbies"
+  ],
+  "itineraries": [
+    {
+      "items": [
+        {
+          "time": "07.00",
+          "details": "Penjemputan peserta"
+        },
+        {
+          "time": "09.00",
+          "details": "Perjalanan menuju Coban Rondo & Taman Labirin"
+        },
+        {
+          "time": "10.00",
+          "details": "Wisata di Coban Rondo & Taman Labirin"
+        },
+        {
+          "time": "12.30",
+          "details": "Makan siang (exclude)"
+        },
+        {
+          "time": "13.30",
+          "details": "Menuju Museum Angkut"
+        },
+        {
+          "time": "14.00",
+          "details": "Wisata di Museum Angkut"
+        },
+        {
+          "time": "16.00",
+          "details": "Menuju homestay transit Bromo"
+        },
+        {
+          "time": "17.00",
+          "details": "Check-in homestay, istirahat dan makan malam (exclude)"
+        },
+        {
+          "time": "23.30",
+          "details": "Persiapan Bromo Midnight Trip"
+        }
+      ],
+      "title": "Explore Batu"
+    },
+    {
+      "items": [
+        {
+          "time": "00.00",
+          "details": "Penjemputan di homestay transit"
+        },
+        {
+          "time": "01.00",
+          "details": "Perjalanan menuju Bromo"
+        },
+        {
+          "time": "03.30",
+          "details": "Tiba di Sunrise View Point"
+        },
+        {
+          "time": "04.30",
+          "details": "Menikmati sunrise"
+        },
+        {
+          "time": "06.00",
+          "details": "Menuju spot Explore Bromo (Bukit Widodaren, Kawah Bromo, Pura Luhur Poten, Pusung Gede, Lembah Watangan)"
+        },
+        {
+          "time": "10.00",
+          "details": "Explore Bromo selesai. Perjalanan kembali menuju homestay"
+        },
+        {
+          "time": "11.00",
+          "details": "Check-out homestay"
+        },
+        {
+          "time": "12.00",
+          "details": "Perjalanan trip Maland 2D1N berakhir. Sayonara!"
+        }
+      ],
+      "title": "Bromo Midnight Trip"
+    }
+  ],
+  "price": ["1125", "1225", "1425", "1675", "2230"],
+  "fasilitas": {
+    "include": [
+      "Homestay Bromo 1 malam",
+      "Tiket masuk wisata",
+      "Jip Bromo",
+      "Transportasi selama trip",
+      "Dokumentasi foto",
+      "Driver",
+      "Guide lokal",
+      "BBM dan parkir"
+    ],
+    "exclude": [
+      "Makan selama trip",
+      "Keperluan Pribadi",
+      "Sewa kuda / jaket di Bromo"
+    ]
+  }
+}

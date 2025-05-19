@@ -8,14 +8,12 @@ const bucketUrl = "/images";
 
 <div class="bg-white shadow-lg overflow-hidden rounded">
   <div class="relative overflow-hidden aspect-[5/4]">
-    <div>
-      <img
-        src={`${bucketUrl}${image}`}
-        alt={`${title} main`}
-        class="object-cover object-center hover:scale-105 transition-all duration-300 h-full w-full"
-        loading="lazy"
-      />
-    </div>
+    <img
+      src={`${bucketUrl}${image}`}
+      alt={`${title} main`}
+      class="object-cover object-center hover:scale-105 transition-all duration-300 h-full w-full"
+      loading="lazy"
+    />
     <div class="absolute bottom-0 w-full">
       <div
         class="bg-amber-300 text-black px-2 py-1 rounded-l-sm font-bold w-fit ml-auto -bottom-2 relative shadow-md"
