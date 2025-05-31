@@ -78,6 +78,72 @@ export const prerender = true;
           ))
         }
       </article>
+      <table class="w-full mt-8 text-sm">
+        <tbody>
+          <tr>
+            <td class="p-2 border border-gray-400 font-semibold sm:w-1/4 w-1/2">
+              Meeting Point
+            </td>
+            <td class="p-2 border border-gray-400">
+              {
+                data.meetingpoint.length === 1 ? (
+                  data.meetingpoint[0]
+                ) : (
+                  <>
+                    <div class="grid grid-cols-1 sm:grid-cols-2">
+                      {data.meetingpoint.map((item) => (
+                        <li class="list-inside">{item}</li>
+                      ))}
+                    </div>
+                    <p class="text-sm italic mt-4">
+                      *Sesuai permintaan (misal hotel/stasiun/bandara/terminal)
+                    </p>
+                  </>
+                )
+              }
+            </td>
+          </tr>
+          <tr>
+            <td class="p-2 border border-gray-400 font-semibold">
+              Waktu Mulai
+            </td>
+            <td class="p-2 border border-gray-400">
+              {
+                data.itineraries.length > 1 ? (
+                  <>
+                    <span class="font-medium">Hari 1</span>,{" "}
+                    {data.itineraries[0].items[0].time}
+                  </>
+                ) : (
+                  data.itineraries[0].items[0].time
+                )
+              } WIB
+            </td>
+          </tr>
+          <tr>
+            <td class="p-2 border border-gray-400 font-semibold">
+              Waktu Selesai
+            </td>
+            <td class="p-2 border border-gray-400">
+              {
+                data.itineraries.length > 1 && (
+                  <>
+                    <span class="font-medium">
+                      Hari {data.itineraries.length}
+                    </span>
+                    ,
+                  </>
+                )
+              }
+              {
+                data.itineraries[data.itineraries.length - 1].items[
+                  data.itineraries[data.itineraries.length - 1].items.length - 1
+                ].time
+              } WIB
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
