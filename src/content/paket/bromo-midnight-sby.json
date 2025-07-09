@@ -1,8 +1,8 @@
 {
   "title": "Bromo Midnight Trip",
-  "slug": "bromo-midnight-trip",
+  "slug": "bromo-midnight-sby",
   "jenistrip": "Private",
-  "meetingpoint": ["Malang"],
+  "meetingpoint": ["Surabaya", "Sidoarjo", "Gresik"],
   "location": "Bromo",
   "descriptions": [
     {
@@ -33,11 +33,11 @@
     {
       "items": [
         {
-          "time": "23.30",
-          "details": "Penjemputan di Malang Kota"
+          "time": "23.00",
+          "details": "Penjemputan di meeting point"
         },
         {
-          "time": "00.30",
+          "time": "00.00",
           "details": "Perjalanan menuju Kawasan Bromo"
         },
         {
@@ -66,22 +66,22 @@
         },
         {
           "time": "10.00",
-          "details": "Perjalanan kembali menuju Malang Kota"
+          "details": "Perjalanan kembali menuju meeting point"
         },
         {
           "time": "12.00",
-          "details": "Tiba di Malang kota. Explore Bromo berakhir. Sayonara!"
+          "details": "Tiba di meeting point. Explore Bromo berakhir. Sayonara!"
         }
       ],
       "title": "Explore Bromo"
     }
   ],
-  "price": ["300", "345", "415", "535", "775"],
+  "price": ["340", "415", "500", "660", "990"],
   "fasilitas": {
     "include": [
+      "Transportasi PP",
       "Tiket masuk",
       "Jip Bromo",
-      "Penjemputan Malang Kota",
       "Air mineral 1x",
       "Guide lokal",
       "Sopir"
@@ -93,5 +93,5 @@
       "Dokumentasi foto"
     ]
   },
-  "features": ["Tiket", "Dokumentasi", "Guide", "Penjemputan kota"]
+  "features": ["Transportasi PP", "Tiket", "Guide"]
 }

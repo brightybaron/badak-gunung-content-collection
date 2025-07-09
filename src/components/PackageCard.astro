@@ -1,0 +1,95 @@
+---
+const { slug, title, meetingpoint, price, image, features } = Astro.props;
+
+const bucketUrl = "/images";
+---
+
+<div
+  class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+>
+  <!-- Image Section -->
+  <div class="relative h-64 overflow-hidden">
+    {
+      image ? (
+        <img
+          src={`${bucketUrl}${image}`}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+      ) : (
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/80 to-purple-600/80 flex items-center justify-center">
+          <span class="text-6xl">📸</span>
+        </div>
+      )
+    }
+  </div>
+
+  <!-- Content Section -->
+  <div class="p-4 space-y-4">
+    <!-- Title and Location -->
+    <div>
+      <div>
+        <h3
+          class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-deep-blue/85 transition-colors duration-200"
+        >
+          {title}
+        </h3>
+        <div class="flex items-center text-gray-600 gap-x-0.5">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span class="text-sm italic">Meeting Point :</span>
+          <span class="text-sm font-semibold">
+            {meetingpoint.join(", ")}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="flex flex-wrap gap-2">
+      {
+        features.map((feature: any) => (
+          <span class="px-3 py-1 bg-indigo-50 text-deep-blue text-xs font-medium rounded-full">
+            {feature}
+          </span>
+        ))
+      }
+    </div>
+
+    <!-- Price and Button -->
+    <div class="flex items-center justify-between">
+      <div class="flex flex-col">
+        <span class="text-sm italic font-medium flex leading-2 text-gray-600">
+          Mulai dari
+        </span>
+        <span class="text-lg sm:text-xl font-bold text-red-500">
+          Rp{" "}
+          {`${Number(price[0]).toLocaleString("id-ID")}.000`}
+          <span class="text-sm text-gray-500">/pax</span>
+        </span>
+      </div>
+      <a
+        href={`/paket/${slug}`}
+        class="px-3 py-1.5 bg-deep-blue text-white text-center rounded-md font-medium transition-all duration-200 transform hover:scale-105"
+      >
+        Lihat Detail
+      </a>
+    </div>
+  </div>
+</div>

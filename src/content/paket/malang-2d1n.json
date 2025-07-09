@@ -134,5 +134,6 @@
       "Keperluan Pribadi",
       "Sewa kuda / jaket di Bromo"
     ]
-  }
+  },
+  "features": ["Homestay", "Tiket", "Dokumentasi", "Guide"]
 }

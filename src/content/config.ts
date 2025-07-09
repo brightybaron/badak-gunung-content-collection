@@ -38,6 +38,7 @@ const paketCollection = defineCollection({
       include: z.array(z.string()),
       exclude: z.array(z.string()),
     }),
+    features: z.array(z.string()),
   }),
 });
 

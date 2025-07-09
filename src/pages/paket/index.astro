@@ -1,25 +1,37 @@
 ---
-import Card from "@components/Card.astro";
+// import Card from "@components/Card.astro";
+import PackageCard from "@components/PackageCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
 import { getCollection } from "astro:content";
 
-const paketData = await getCollection("paket");
+// const paketData = await getCollection("paket");
+
+// const cardData = (entry: any) => ({
+//   image: entry.data.images[0].url,
+//   title: entry.data.title,
+//   slug: entry.id,
+//   jenistrip: entry.data.jenistrip,
+//   durasi: entry.data.itineraries.length,
+//   price: entry.data.price,
+//   itineraries: entry.data.itineraries,
+// });
+
+const packages = await getCollection("paket");
 
 const cardData = (entry: any) => ({
   image: entry.data.images[0].url,
   title: entry.data.title,
   slug: entry.id,
-  jenistrip: entry.data.jenistrip,
-  durasi: entry.data.itineraries.length,
+  meetingpoint: entry.data.meetingpoint,
   price: entry.data.price,
-  itineraries: entry.data.itineraries,
+  features: entry.data.features,
 });
 ---
 
 <MainLayout pageTitle="Paket">
-  <h1 class="sm:text-4xl text-2xl font-bold text-center">Paket Trip</h1>
-  <div class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6">
+  <h1 class="sm:text-4xl text-2xl font-bold text-center mb-8">Paket Trip</h1>
+  <!-- <div class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 gap-6">
       {
         paketData.length === 0 ? (
@@ -34,6 +46,21 @@ const cardData = (entry: any) => ({
             )
             .map((entry: any) => <Card {...cardData(entry)} />)
         )
+      }
+    </div>
+  </div> -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Packages Grid -->
+    <div
+      id="packages-grid"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {
+        packages
+          .sort((a: { data: { title: string } }, b: { data: { title: any } }) =>
+            a.data.title.localeCompare(b.data.title)
+          )
+          .map((entry: any) => <PackageCard {...cardData(entry)} />)
       }
     </div>
   </div>

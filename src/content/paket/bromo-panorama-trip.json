@@ -84,5 +84,6 @@
       "Sewa kuda / jaket di Bromo",
       "Dokumentasi foto"
     ]
-  }
+  },
+  "features": ["Tiket", "Dokumentasi", "Guide", "Penjemputan kota"]
 }
