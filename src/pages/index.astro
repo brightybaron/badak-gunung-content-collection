@@ -1,9 +1,8 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-// import Kard from "@components/Kard.astro";
 import { IconPaperPlane } from "@components/Icons";
 import TypingText from "@components/TypingText.astro";
-import Card from "@components/Card.astro";
+import PackageCard from "@components/PackageCard.astro";
 
 // Hero.astro
 interface Props {
@@ -53,14 +52,23 @@ import { getCollection } from "astro:content";
 
 const paketData = await getCollection("paket");
 
+// const cardData = (entry: any) => ({
+//   image: entry.data.images[0].url,
+//   title: entry.data.title,
+//   slug: entry.id,
+//   jenistrip: entry.data.jenistrip,
+//   durasi: entry.data.itineraries.length,
+//   price: entry.data.price,
+//   itineraries: entry.data.itineraries,
+// });
+
 const cardData = (entry: any) => ({
   image: entry.data.images[0].url,
   title: entry.data.title,
   slug: entry.id,
-  jenistrip: entry.data.jenistrip,
-  durasi: entry.data.itineraries.length,
+  meetingpoint: entry.data.meetingpoint,
   price: entry.data.price,
-  itineraries: entry.data.itineraries,
+  features: entry.data.fasilitas.include,
 });
 ---
 
@@ -133,7 +141,7 @@ const cardData = (entry: any) => ({
                   ) => a.data.title.localeCompare(b.data.title)
                 )
                 .slice(0, 3)
-                .map((entry: any) => <Card {...cardData(entry)} />)
+                .map((entry: any) => <PackageCard {...cardData(entry)} />)
             )
           }
         </div>

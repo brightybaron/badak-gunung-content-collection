@@ -135,19 +135,19 @@
       "title": "Jatim Park 1/2/3"
     }
   ],
-  "price": ["1850", "2115", "2220", "2700", "3260"],
+  "price": ["1655", "1930", "2010", "2580", "3070"],
   "fasilitas": {
     "include": [
-      "Homestay Bromo 1 malam",
-      "Hotel 1 malam",
+      "Homestay 1N",
+      "Hotel ★3 1N",
       "Tiket masuk wisata",
       "Jip Bromo",
-      "Transportasi selama trip",
       "Sarapan di Bromo",
       "Air mineral",
-      "Dokumenstasi foto",
       "Guide lokal",
+      "Transportasi selama trip",
       "Driver",
+      "Dokumentasi foto",
       "BBM dan parkir"
     ],
     "exclude": [
@@ -156,5 +156,5 @@
       "Sewa kuda / jaket di Bromo"
     ]
   },
-  "features": ["Homestay", "Tiket", "Dokumentasi", "Guide"]
+  "features": ["Hotel", "Tiket", "Dokumentasi", "Guide", "Makan 2x"]
 }

@@ -25,7 +25,7 @@ const cardData = (entry: any) => ({
   slug: entry.id,
   meetingpoint: entry.data.meetingpoint,
   price: entry.data.price,
-  features: entry.data.features,
+  features: entry.data.fasilitas.include,
 });
 ---
 
