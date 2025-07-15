@@ -1,0 +1,139 @@
+{
+  "title": "Dieng - YK 2D1N",
+  "slug": "dieng-yk-2d1n",
+  "jenistrip": "Private",
+  "meetingpoint": ["Surabaya", "Sidoarjo", "Gresik"],
+  "location": "Dieng - Yogyakarta",
+  "descriptions": [
+    {
+      "text": "Perjalanan seru ke Dieng dan Yogyakarta selama 2 hari 1 malam, menjelajahi destinasi menarik dengan pengalaman tak terlupakan. Rasakan kesejukan alam, kuliner khas, dan pesona wisata yang memanjakan mata."
+    },
+    {
+      "text": "Perjalanan mencakup kunjungan ke destinasi populer seperti Candi Arjuna, Kawah Sikidang, Jeep Lava Tour Merapi hingga kuliner malam di Kota Yogyakarta. Dengan akomodasi nyaman dan transportasi yang siap mengantar, liburan Anda akan lebih menyenangkan dan bebas repot!"
+    }
+  ],
+  "images": [
+    {
+      "url": "/dieng-2.webp"
+    },
+    {
+      "url": "/dieng-3.webp"
+    },
+    {
+      "url": "/yk-lava-1.webp"
+    },
+    {
+      "url": "/yk-lava-2.webp"
+    }
+  ],
+  "destinasi": [
+    "Candi Arjuna",
+    "Pintu Langit Sky View",
+    "Kawah Sikidang",
+    "Karst Tubing",
+    "Lava Tour Merapi",
+    "Malioboro"
+  ],
+  "itineraries": [
+    {
+      "items": [
+        {
+          "time": "22.00",
+          "details": "Penjemputan peserta di meeting point"
+        },
+        {
+          "time": "22.30",
+          "details": "Perjalanan menuju Pintu Langit Sky View"
+        },
+        {
+          "time": "05.00",
+          "details": "Wisata sunrise di Pintu Langit Sky View "
+        },
+        {
+          "time": "06.45",
+          "details": "Makan pagi (Include)"
+        },
+        {
+          "time": "08.15",
+          "details": "Wisata di Candi Arjuna"
+        },
+        {
+          "time": "09.30",
+          "details": "Wisata di Kawah Sikidang"
+        },
+        {
+          "time": "11.30",
+          "details": "Makan siang (exclude)"
+        },
+        {
+          "time": "13.00",
+          "details": "Perjalanan menuju Yogyakarta"
+        },
+        {
+          "time": "16.30",
+          "details": "Check-in hotel dan Free Time"
+        }
+      ],
+      "title": "Persiapan - Dieng (B)"
+    },
+    {
+      "items": [
+        {
+          "time": "07.00",
+          "details": "Breakfast hotel (include)"
+        },
+        {
+          "time": "08.00",
+          "details": "Check-out hotel dan perjalanan menuju Karst Tubing"
+        },
+        {
+          "time": "09.00",
+          "details": "Wisata Karst Tubing"
+        },
+        {
+          "time": "10.30",
+          "details": "Perjalanan menuju Jeep Merapi"
+        },
+        {
+          "time": "11.30",
+          "details": "Wisata Jeep Merapi"
+        },
+        {
+          "time": "13.30",
+          "details": "Makan siang (exclude)"
+        },
+        {
+          "time": "14.30",
+          "details": "Free time di Yogyakarta"
+        },
+        {
+          "time": "18.00",
+          "details": "Perjalanan kembali menuju meeting point"
+        },
+        {
+          "time": "22.00",
+          "details": "Perjalanan trip Dieng - Yogyakarta 2D1N berakhir. Sayonara!"
+        }
+      ],
+      "title": "Karst Tubing, Jeep Merapi (B)"
+    }
+  ],
+  "price": ["1465", "1665", "1840", "2230", "3105"],
+  "fasilitas": {
+    "include": [
+      "Hotel ★3 1N",
+      "Tiket masuk wisata",
+      "Jip Merapi",
+      "Karst Tubing",
+      "Makan 2x",
+      "Air mineral 2x",
+      "Transportasi + Driver",
+      "Guide lokal",
+      "Dokumentasi foto",
+      "BBM",
+      "Tol & parkir"
+    ],
+    "exclude": ["Makan di luar paket", "Keperluan Pribadi"]
+  },
+  "features": ["Homestay", "Tiket", "Dokumentasi", "Guide"]
+}
