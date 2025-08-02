@@ -144,7 +144,7 @@ const Navbar = ({ currentPath }: { currentPath: string }) => {
       }`}
       aria-label="Breadcrumb"
     >
-      <div className="max-w-7xl mx-auto sm:px-12 px-4">
+      <div className="mx-auto sm:px-12 px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="/" className="flex-shrink-0 flex items-center gap-x-2">
