@@ -5,9 +5,25 @@ import { IconChat } from "@components/Icons";
 import Navbar from "@components/Navbar";
 import "@styles/global.css";
 
-const { pageTitle } = Astro.props;
+// const { pageTitle } = Astro.props;
 const currentPath = Astro.url.pathname;
 const isHome = currentPath === "/" ? true : false;
+
+const {
+  pageTitle,
+  deskripsi,
+  description = deskripsi || "Badak Gunung - Paket Wisata Domestik",
+  image = "/logo.png",
+  canonical = currentPath,
+  keywords = "travel, open trip, tour, malang, bromo, dieng, yogya, indonesia, jawa timur, wisata, open trip, private trip, badak gunung",
+} = Astro.props;
+
+const title =
+  currentPath === "/"
+    ? "Badak Gunung | Paket Wisata Domestik"
+    : `${pageTitle} | Badak Gunung`;
+const siteUrl = Astro.url.origin;
+const fullCanonical = `${siteUrl}${canonical}`;
 ---
 
 <html lang="id">
@@ -16,7 +32,59 @@ const isHome = currentPath === "/" ? true : false;
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{isHome ? "Home" : pageTitle} | Badak Gunung</title>
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={fullCanonical} />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-title" content="Ceria Hari Kita" />
+    <meta name="application-name" content="Ceria Hari Kita" />
+    <meta name="author" content="Ceria Hari Kita" />
+    <meta name="robots" content="index, follow" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:image:alt" content="Logo Ceria Hari Kita" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+    <meta name="twitter:image:alt" content="Logo Ceria Hari Kita" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Badak Gunung Adventure",
+        "image": "{siteUrl}/logo.png",
+        "url": "{siteUrl}",
+        "telephone": "+62 851-5727-6433",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Pasir Raya No.23 PPI Manyar",
+          "addressLocality": "Gresik",
+          "postalCode": "61151",
+          "addressCountry": "ID"
+        },
+        "sameAs": [
+          "https://www.instagram.com/badakgunung/",
+          "https://wa.me/6285157276433"
+        ]
+      }
+    </script>
   </head>
   <body>
     <Navbar currentPath={currentPath} client:load />

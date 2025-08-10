@@ -61,16 +61,6 @@ const bucketUrl = "/images";
       </span>
     </div>
 
-    <!-- Features -->
-    <!-- <div class="flex flex-wrap gap-2">
-      {
-        features.map((feature: any) => (
-          <span class="px-3 py-1 bg-indigo-50 text-deep-blue text-xs font-medium rounded-full">
-            {feature}
-          </span>
-        ))
-      }
-    </div> -->
     {pathname === "/" ? "" : <FeatureDisplay client:load features={features} />}
 
     <!-- Price and Button -->
