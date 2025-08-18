@@ -1,21 +1,8 @@
 ---
-// import Card from "@components/Card.astro";
 import PackageCard from "@components/PackageCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
 import { getCollection } from "astro:content";
-
-// const paketData = await getCollection("paket");
-
-// const cardData = (entry: any) => ({
-//   image: entry.data.images[0].url,
-//   title: entry.data.title,
-//   slug: entry.id,
-//   jenistrip: entry.data.jenistrip,
-//   durasi: entry.data.itineraries.length,
-//   price: entry.data.price,
-//   itineraries: entry.data.itineraries,
-// });
 
 const packages = await getCollection("paket");
 

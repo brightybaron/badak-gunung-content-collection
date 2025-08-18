@@ -52,16 +52,6 @@ import { getCollection } from "astro:content";
 
 const paketData = await getCollection("paket");
 
-// const cardData = (entry: any) => ({
-//   image: entry.data.images[0].url,
-//   title: entry.data.title,
-//   slug: entry.id,
-//   jenistrip: entry.data.jenistrip,
-//   durasi: entry.data.itineraries.length,
-//   price: entry.data.price,
-//   itineraries: entry.data.itineraries,
-// });
-
 const cardData = (entry: any) => ({
   image: entry.data.images[0].url,
   title: entry.data.title,
@@ -70,6 +60,15 @@ const cardData = (entry: any) => ({
   price: entry.data.price,
   features: entry.data.fasilitas.include,
 });
+
+const shuffleArray = (array: any[]) => {
+  const shuffled = [...array]; // Create a copy
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 ---
 
 <MainLayout>
@@ -133,13 +132,7 @@ const cardData = (entry: any) => ({
                 <p class="text-center">Tidak tersedia paket wisata</p>
               </div>
             ) : (
-              paketData
-                .sort(
-                  (
-                    a: { data: { title: string } },
-                    b: { data: { title: any } }
-                  ) => a.data.title.localeCompare(b.data.title)
-                )
+              shuffleArray(paketData)
                 .slice(0, 3)
                 .map((entry: any) => <PackageCard {...cardData(entry)} />)
             )
