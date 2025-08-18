@@ -82,7 +82,7 @@ const ImageLightbox = ({
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#ffffff"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -98,7 +98,7 @@ const ImageLightbox = ({
         <>
           <button
             onClick={handlePrevious}
-            className="absolute sm:left-8 left-4 text-white sm:bg-gray-800 bg-transparent hover:text-gray-300 z-50 hover:scale-105 hover:bg-gray-600 rounded-sm"
+            className="absolute sm:left-8 left-4 text-stone-300 bg-gray-800/50 hover:text-gray-300 z-50 hover:scale-105 hover:bg-gray-600 rounded-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,18 +106,18 @@ const ImageLightbox = ({
               height="48"
               viewBox="0 0 24 24 "
               fill="none"
-              stroke="#ffffff"
+              stroke="currentColor"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-8 h-8"
+              className="w-8 h-8 sm:w-12 sm:h-12"
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
           </button>
           <button
             onClick={handleNext}
-            className="absolute sm:right-8 right-4 text-white sm:bg-gray-800 bg-transparent hover:text-gray-300 z-50 hover:scale-105 hover:bg-gray-600 rounded-sm"
+            className="absolute sm:right-8 right-4 text-stone-300 bg-gray-800/50 hover:text-gray-300 z-50 hover:scale-105 hover:bg-gray-600 rounded-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -125,11 +125,11 @@ const ImageLightbox = ({
               height="48"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#ffffff"
+              stroke="currentColor"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-8 h-8"
+              className="w-8 h-8 sm:w-12 sm:h-12"
             >
               <path d="m9 18 6-6-6-6" />
             </svg>
@@ -149,7 +149,7 @@ const ImageLightbox = ({
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ffffff"
+            stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -170,7 +170,7 @@ const ImageLightbox = ({
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ffffff"
+            stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

@@ -123,10 +123,11 @@ const cardData = (entry: any) => ({
                 <p class="text-center">Tidak tersedia paket wisata</p>
               </div>
             ) : (
-              paketData
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 3)
-                .map((entry: any) => <PackageCard {...cardData(entry)} />)
+              paketData.map((entry: any) => (
+                <div class="package-item" style="display: none;">
+                  <PackageCard {...cardData(entry)} />
+                </div>
+              ))
             )
           }
         </div>
@@ -200,6 +201,13 @@ const cardData = (entry: any) => ({
     }
 
     setInterval(nextSlide, 5000);
+
+    // Pick package random logic
+    const items = document.querySelectorAll(
+      ".package-item"
+    ) as NodeListOf<HTMLElement>;
+    const shuffled = Array.from(items).sort(() => Math.random() - 0.5);
+    shuffled.slice(0, 3).forEach((item) => (item.style.display = "block"));
   });
 </script>
 
