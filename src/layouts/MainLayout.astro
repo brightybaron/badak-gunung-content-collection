@@ -1,7 +1,6 @@
 ---
 import FloatingButton from "@components/FloatingButton.astro";
 import Footer from "@components/Footer.astro";
-import { IconChat } from "@components/Icons";
 import Navbar from "@components/Navbar";
 import "@styles/global.css";
 
@@ -63,6 +62,22 @@ const fullCanonical = `${siteUrl}${canonical}`;
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
     <meta name="twitter:image:alt" content="Logo Ceria Hari Kita" />
 
+    <!-- Theme initialization script - prevents flash of wrong theme -->
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (theme === "dark" || (!theme && systemPrefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
@@ -86,7 +101,7 @@ const fullCanonical = `${siteUrl}${canonical}`;
       }
     </script>
   </head>
-  <body>
+  <body class="bg-slate-100 dark:bg-[#2b2a33] transition-colors duration-300">
     <Navbar currentPath={currentPath} client:load />
     <div class={isHome ? "mt-0" : "sm:mt-20 mt-18"}></div>
     <main class="pb-8">

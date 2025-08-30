@@ -37,9 +37,9 @@ export const prerender = true;
 ---
 
 <MainLayout pageTitle={data.title}>
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4">
+  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 dark:text-[#f3f4f6]">
     <h1 class="sm:text-4xl text-3xl font-bold mb-4">{data.title}</h1>
-    <div class="flex flex-wrap gap-4 text-sm font-medium text-gray-600">
+    <div class="flex flex-wrap gap-4 text-sm font-medium text-[#9ca3af]">
       <div class="flex items-center">
         <IconMapPin />
         {data.location}
@@ -63,14 +63,16 @@ export const prerender = true;
     <GalleryWrapper images={data.images} bucketUrl="/images" client:load />
   </section>
 
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8">
+  <section
+    class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8 dark:text-[#f3f4f6]"
+  >
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Overview</h2>
       <article class="space-y-2">
         {
           data.descriptions.map((text: any, index: number) => (
             <p
-              class={`text-gray-800 sm:text-base text-sm
+              class={`text-gray-800 dark:text-[#f3f4f6] sm:text-base text-sm
                   ${index === 0 ? "font-semibold" : "font-medium"}`}
             >
               {text.text}
@@ -78,7 +80,7 @@ export const prerender = true;
           ))
         }
       </article>
-      <table class="w-full mt-8 text-sm">
+      <table class="w-full mt-8 text-sm sm:text-base">
         <tbody>
           <tr>
             <td class="p-2 border border-gray-400 font-semibold sm:w-1/4 w-1/2">
@@ -87,7 +89,7 @@ export const prerender = true;
             <td class="p-2 border border-gray-400">
               {
                 data.meetingpoint.length === 1 ? (
-                  data.meetingpoint[0]
+                  <p class="font-semibold">{data.meetingpoint[0]}</p>
                 ) : (
                   <>
                     <div class="grid grid-cols-1 sm:grid-cols-2">
@@ -147,7 +149,9 @@ export const prerender = true;
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8">
+  <section
+    class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8 dark:text-[#f3f4f6]"
+  >
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Destinasi</h2>
       <div
@@ -155,9 +159,9 @@ export const prerender = true;
       >
         {
           data.destinasi.map((destinasi: any) => (
-            <div class="flex items-center gap-x-1 text-deep-blue">
+            <div class="flex items-center gap-x-1 text-deep-blue dark:text-[#f3f4f6]">
               <IconMapPinned />
-              <span class="text-black">{destinasi}</span>
+              <span class="text-black dark:text-[#f3f4f6]">{destinasi}</span>
             </div>
           ))
         }
@@ -168,7 +172,9 @@ export const prerender = true;
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8">
+  <section
+    class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8 dark:text-[#f3f4f6]"
+  >
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Itinerary</h2>
       <div class="space-y-2">
@@ -181,12 +187,16 @@ export const prerender = true;
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8">
+  <section
+    class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8 dark:text-[#f3f4f6]"
+  >
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Fasilitas</h2>
       <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
-        <div class="col-span-1 border border-deep-blue">
-          <p class="font-semibold text-center bg-deep-blue text-white py-2">
+        <div class="col-span-1 border border-deep-blue dark:border-[#6b7280]">
+          <p
+            class="font-semibold text-center bg-deep-blue dark:bg-[#6b7280] text-white py-2"
+          >
             Include
           </p>
           <div
@@ -208,8 +218,10 @@ export const prerender = true;
             />
           </div>
         </div>
-        <div class="col-span-1 border border-deep-blue">
-          <p class="font-semibold text-center bg-deep-blue text-white py-2">
+        <div class="col-span-1 border border-deep-blue dark:border-[#6b7280]">
+          <p
+            class="font-semibold text-center bg-deep-blue dark:bg-[#6b7280] text-white py-2"
+          >
             Exclude
           </p>
           <div
@@ -235,13 +247,15 @@ export const prerender = true;
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8">
+  <section
+    class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 mt-8 dark:text-[#f3f4f6]"
+  >
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Pricelist</h2>
       <div class="overflow-x-auto">
         <table class="w-full mb-4">
           <thead>
-            <tr class="bg-deep-blue text-white text-center">
+            <tr class="bg-deep-blue dark:bg-[#6b7280] text-white text-center">
               <th class="px-4 py-2 font-semibold border">Jumlah Peserta</th>
               <th class="px-4 py-2 font-semibold border">Harga per pax</th>
             </tr>
@@ -254,7 +268,7 @@ export const prerender = true;
                 .map((item: any, index: number) => {
                   const pax = data.price.length + 1 - index;
                   return (
-                    <tr class="hover:bg-sandy-beige/50 text-center">
+                    <tr class="text-center">
                       <td class="px-4 py-2 border">{pax}</td>
                       <td class="px-4 py-2 border font-medium">
                         Rp. {`${Number(item).toLocaleString("id-ID")}.000`}
@@ -272,7 +286,7 @@ export const prerender = true;
     </div>
     <div class="flex justify-center mt-8">
       <a
-        class="inline-flex gap-x-1 items-center justify-center w-fit mt-2 py-2 px-4 bg-amber-400 text-black hover:text-white hover:bg-deep-blue hover:scale-105 border rounded-full font-semibold transition-all duration-300"
+        class="inline-flex gap-x-1 items-center justify-center w-fit mt-2 py-2 px-4 bg-amber-400 hover:bg-deep-blue text-black hover:text-white hover:scale-105 ring-1 ring-gray-800 rounded-full font-semibold transition-all duration-300"
         href={`https://wa.me/6285157276433/?text=Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${encodeURIComponent(data.title || "")}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -283,27 +297,3 @@ export const prerender = true;
     </div>
   </section>
 </MainLayout>
-
-<style>
-  .title-heading {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    width: fit-content;
-  }
-
-  .title-heading::after {
-    content: "";
-    display: block;
-    border-bottom: 3px solid #1b365d;
-    margin-left: 1rem;
-    margin-top: 0.2rem;
-  }
-
-  .title-heading::before {
-    content: "";
-    display: block;
-    border-bottom: 3px solid #1b365d;
-    margin-right: 1rem;
-  }
-</style>

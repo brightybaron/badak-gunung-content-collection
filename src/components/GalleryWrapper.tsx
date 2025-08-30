@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageLightbox from "@components/ImageLightbox";
 
 const GalleryWrapper = ({ images, bucketUrl }: any) => {
@@ -20,6 +20,18 @@ const GalleryWrapper = ({ images, bucketUrl }: any) => {
     setInitialIndex(index);
     setIsLightboxOpen(true);
   };
+
+  useEffect(() => {
+    if (isLightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isLightboxOpen]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">

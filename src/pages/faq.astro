@@ -129,13 +129,17 @@ const termsContent = [
 <MainLayout pageTitle="FAQ">
   <section class="space-y-20">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6">
-      <h1 class="sm:text-3xl text-xl font-bold text-center mb-4">
+      <h1
+        class="sm:text-3xl text-xl font-bold text-center mb-4 dark:text-[#f3f4f6]"
+      >
         Most Frequently Asked
       </h1>
       <Accordion data={faqContent} faqPage={true} client:load />
     </div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8 md:px-6" id="terms-conditions">
-      <h2 class="sm:text-3xl text-xl font-bold text-center my-4">
+      <h2
+        class="sm:text-3xl text-xl font-bold text-center my-4 dark:text-[#f3f4f6]"
+      >
         Syarat dan Ketentuan
       </h2>
       <Accordion data={termsContent} faqPage={true} client:load />

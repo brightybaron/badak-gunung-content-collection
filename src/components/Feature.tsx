@@ -15,7 +15,7 @@ const FeaturesDisplay = ({ features }: { features: string[] }) => {
       {visibleFeatures.map((feature, index) => (
         <span
           key={index}
-          className="px-2 py-1 bg-indigo-50 text-blue-700 text-xs font-medium rounded-full"
+          className="px-2 py-1 bg-indigo-50 dark:bg-[#374151] text-blue-700 dark:text-[#f3f4f6] text-xs font-medium rounded-full"
         >
           {feature}
         </span>

@@ -16,20 +16,20 @@ const Accordion = ({ data, faqPage }: { data: any; faqPage: boolean }) => {
       {data.map((item: any, index: number) => (
         <div
           key={index}
-          className="border border-gray-300 rounded-sm overflow-hidden mb-2"
+          className="border border-gray-300 dark:border-[#9ca3af] rounded-sm overflow-hidden mb-2"
         >
           <button
             onClick={() => toggleDay(item.title)}
-            className={`w-full py-3 flex items-center transition-colors duration-200 ${
+            className={`w-full py-3 flex items-center transition-colors duration-200  ${
               openDays[item.title]
-                ? "bg-deep-blue text-white"
-                : "bg-gray-50 text-black"
+                ? "bg-deep-blue dark:bg-[#1f2937] text-white"
+                : "bg-gray-50 dark:bg-[#9ca3af] text-black "
             } ${faqPage ? "px-4" : "px-1 sm:px-3"}`}
           >
             <div className="flex items-center gap-x-2">
               <span
                 className={`min-w-11 ${
-                  openDays[item.title] ? "text-sandy-beige" : "text-deep-blue"
+                  openDays[item.title] ? "text-amber-100" : "text-deep-blue"
                 } font-semibold ${faqPage ? "hidden" : ""}`}
               >
                 Day {index + 1}
@@ -54,7 +54,7 @@ const Accordion = ({ data, faqPage }: { data: any; faqPage: boolean }) => {
           </button>
           <div
             className={`
-                overflow-hidden transition-all duration-200 bg-white
+                overflow-hidden transition-all duration-200 bg-white dark:bg-[#9ca3af]
                 ${
                   openDays[item.title]
                     ? "max-h-fit px-2 sm:px-4 py-3"
@@ -78,7 +78,7 @@ const Accordion = ({ data, faqPage }: { data: any; faqPage: boolean }) => {
                   {item.items.map((item: any, idx: number) => (
                     <tr
                       key={idx}
-                      className="flex text-slate-900 mb-2 last:mb-0"
+                      className="flex mb-2 last:mb-0 dark:text-black"
                     >
                       <td className="flex mr-1 justify-center min-w-13">
                         {item.time && <b>{item.time}</b>}

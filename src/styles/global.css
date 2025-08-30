@@ -21,3 +21,33 @@
   --font-sarina: "Sarina", sans-serif;
   --color-deep-blue: #1b365d;
 }
+
+.title-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.title-heading::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #1b365d;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+
+  @variant dark {
+    border-bottom: 3px solid #6b7280;
+  }
+}
+
+.title-heading::before {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #1b365d;
+  margin-right: 1rem;
+
+  @variant dark {
+    border-bottom: 3px solid #6b7280;
+  }
+}

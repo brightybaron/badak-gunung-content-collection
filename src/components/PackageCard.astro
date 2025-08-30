@@ -9,7 +9,7 @@ const bucketUrl = "/images";
 ---
 
 <div
-  class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-gray-200 border"
+  class="group bg-white dark:bg-[#1f2937] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-gray-200 dark:border-[#6b7280] border"
 >
   <!-- Image Section -->
   <div class="relative h-64 overflow-hidden">
@@ -32,11 +32,13 @@ const bucketUrl = "/images";
   <div class="p-4 space-y-2">
     <!-- Title and Location -->
     <h3
-      class="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-deep-blue/85 transition-colors duration-200"
+      class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-[#f3f4f6] group-hover:text-deep-blue/85 group-hover:dark:text-[#9ca3af] transition-colors duration-200"
     >
       {title}
     </h3>
-    <div class="hidden sm:flex items-center text-gray-600 gap-x-0.5">
+    <div
+      class="hidden sm:flex items-center text-gray-600 dark:text-gray-100 gap-x-0.5"
+    >
       <svg
         class="w-4 h-4"
         fill="none"
@@ -70,13 +72,15 @@ const bucketUrl = "/images";
           pathname === "/" ? (
             ""
           ) : (
-            <span class="text-sm italic font-medium flex leading-2 text-gray-600">
+            <span class="text-sm italic font-medium flex leading-2 text-gray-600 dark:text-gray-100">
               Mulai dari
             </span>
           )
         }
 
-        <span class="text-lg sm:text-xl font-bold text-red-500">
+        <span
+          class="text-lg sm:text-xl font-bold text-red-500 dark:text-amber-500"
+        >
           Rp{" "}
           {`${Number(price[0]).toLocaleString("id-ID")}.000`}
           <span class="text-sm text-gray-500">/pax</span>
@@ -84,7 +88,7 @@ const bucketUrl = "/images";
       </div>
       <a
         href={`/paket/${slug}`}
-        class="px-3 py-1.5 bg-deep-blue text-white text-center rounded-md font-medium transition-all duration-200 transform hover:scale-105"
+        class="px-3 py-1.5 bg-deep-blue dark:bg-[#2d4a7a] text-white text-center rounded-md font-medium transition-all duration-200 transform hover:scale-105"
       >
         Lihat Detail
       </a>
