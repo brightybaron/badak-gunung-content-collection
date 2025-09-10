@@ -51,7 +51,7 @@ const fullCanonical = `${siteUrl}${canonical}`;
     <meta property="og:url" content={fullCanonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo.png" />
+    <meta property="og:image" content={image} />
     <meta property="og:image:alt" content="Logo Ceria Hari Kita" />
 
     <!-- Twitter -->
@@ -59,24 +59,8 @@ const fullCanonical = `${siteUrl}${canonical}`;
     <meta name="twitter:url" content={fullCanonical} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/logo.png" />
+    <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content="Logo Ceria Hari Kita" />
-
-    <!-- Theme initialization script - prevents flash of wrong theme -->
-    <script is:inline>
-      (function () {
-        const theme = localStorage.getItem("theme");
-        const systemPrefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-
-        if (theme === "dark" || (!theme && systemPrefersDark)) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      })();
-    </script>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">

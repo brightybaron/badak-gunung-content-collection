@@ -16,7 +16,12 @@
                 url: "https://www.instagram.com/badakgunung/",
               },
             ].map((link) => (
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={link.url}
+                class="hover:underline text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {link.page}
               </a>
             ))
@@ -25,7 +30,7 @@
       </div>
       <div class="flex flex-col gap-y-2">
         <p class="text-lg font-bold underline mb-2">Our Office</p>
-        <address class="space-y-2 font-medium not-italic">
+        <address class="space-y-2 font-medium not-italic text-sm">
           Pongangan, Manyar, Gresik, Jawa Timur
           <br />
           Phone: <a

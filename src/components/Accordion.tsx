@@ -66,7 +66,10 @@ const Accordion = ({ data, faqPage }: { data: any; faqPage: boolean }) => {
               <div className="px-4">
                 <ul className="space-y-2">
                   {item.items.map((item: any, idx: number) => (
-                    <li key={idx} className="font-medium list-disc">
+                    <li
+                      key={idx}
+                      className="font-medium list-disc dark:text-black"
+                    >
                       {item.details}
                     </li>
                   ))}
