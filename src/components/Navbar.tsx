@@ -213,11 +213,6 @@ const Navbar = ({ currentPath }: { currentPath: string }) => {
             <ThemeSwitcher />
           </div>
 
-          {/* Mobile: Theme Toggle + Menu button */}
-          <div className="md:hidden flex items-center">
-            <ThemeSwitcher />
-          </div>
-
           {/* Mobile: Menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -231,7 +226,7 @@ const Navbar = ({ currentPath }: { currentPath: string }) => {
 
         {/* Mobile Menu - Slide from right */}
         <div
-          className={`fixed md:hidden top-0 left-0 bottom-0 bg-gray-100 dark:bg-gray-800 shadow-lg w-4/5 z-50 transform transition-transform duration-300 ease-in-out text-deep-blue dark:text-white ${
+          className={`fixed md:hidden top-0 left-0 bottom-0 bg-gray-100 dark:bg-gray-800 shadow-lg w-5/6 z-50 transform transition-transform duration-300 ease-in-out text-deep-blue dark:text-white ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -248,7 +243,7 @@ const Navbar = ({ currentPath }: { currentPath: string }) => {
             </a>
           </div>
 
-          <div className="p-4 overflow-y-auto h-full pb-20">
+          <div className="px-4 overflow-y-auto">
             {listMenu.map((item, index) => (
               <div key={index} className="mt-2 font-medium">
                 {item.hasDropdown ? (
@@ -297,6 +292,12 @@ const Navbar = ({ currentPath }: { currentPath: string }) => {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Mobile: Theme Toggle + Menu button */}
+          <div className="md:hidden absolute bottom-8 flex items-center py-2">
+            <div className="pl-7">Theme</div>
+            <ThemeSwitcher />
           </div>
         </div>
 
