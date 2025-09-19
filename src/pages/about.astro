@@ -1,5 +1,10 @@
 ---
-import { IconMapPinHouse, IconChat, IconMail } from "@components/Icons";
+import {
+  IconMapPinHouse,
+  IconChat,
+  IconMail,
+  IconInstagram,
+} from "@components/Icons";
 import MainLayout from "@layouts/MainLayout.astro";
 ---
 
@@ -11,15 +16,23 @@ import MainLayout from "@layouts/MainLayout.astro";
       >
         <img src="/logo.png" alt="logo badak gunung" class="w-28 h-28" />
       </div>
-      <div>
-        <p class="text-xl font-bold mb-4">About Us</p>
+      <div class="space-y-2 indent-6">
+        <p class="text-xl font-bold mb-6 indent-0">About Us</p>
         <p>
-          Berdiri sejak awal Agustus 2020, Badak Gunung Adventure bergerak dalam
-          bidang pariwisata yang beroperasi di Jawa Timur, khususnya di Kota
-          Malang dan sekitarnya. Biro wisata ini dibentuk oleh beberapa nama
-          yang berdedikasi dengan profesional tinggi dalam bidang pariwisata dan
-          pengetahuan terhadap setiap destinasi yang menjadi wilayah layanan
-          wisata di Badak Gunung Adventure.
+          Badak Gunung Adventure merupakan biro perjalanan wisata yang
+          beroperasi di Jawa Timur, dengan fokus utama di Kota Malang dan daerah
+          sekitarnya. Kami berkomitmen menghadirkan pengalaman perjalanan yang
+          menyenangkan dan berkesan, didukung oleh tim profesional yang
+          berdedikasi serta memiliki pemahaman mendalam mengenai berbagai
+          destinasi wisata.
+        </p>
+        <p>
+          Lebih dari sekadar layanan perjalanan, kami berusaha memberikan solusi
+          wisata yang menyeluruh, mulai dari perencanaan hingga pendampingan
+          selama perjalanan. Dengan pendekatan yang ramah dan profesional, Badak
+          Gunung Adventure siap menjadi pilihan utama bagi siapa pun yang ingin
+          menjelajahi keindahan Jawa Timur dengan aman, nyaman, dan penuh
+          kenangan.
         </p>
       </div>
     </div>
@@ -51,6 +64,17 @@ import MainLayout from "@layouts/MainLayout.astro";
               rel="noopener noreferrer"
             >
               rekayodolan@gmail.com
+            </a>
+          </li>
+          <li class="flex items-center gap-x-2">
+            <IconInstagram />
+            <a
+              href="https://www.instagram.com/badakgunung/"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @badakgunung
             </a>
           </li>
         </ul>

@@ -1,0 +1,38 @@
+{
+  "title": "Bromo Midnight Trip",
+  "slug": "bromo-midnight-ml",
+  "jenistrip": "Private",
+  "meetingpoint": ["Malang / Surabaya"],
+  "location": "Bromo",
+  "descriptions": [
+    {
+      "text": ""
+    },
+    {
+      "text": ""
+    },
+    {
+      "text": ""
+    }
+  ],
+  "images": [
+    { "url": "/bromo-2.jpeg" },
+    { "url": "/bromo-1.webp" },
+    { "url": "/bromo-3.webp" },
+    { "url": "/bromo-4.webp" }
+  ],
+  "destinasi": [],
+  "itineraries": [],
+  "price": ["300", "345", "410", "525", "735"],
+  "fasilitas": {
+    "include": [
+      "Tiket masuk",
+      "Jip Bromo",
+      "Transportasi PP",
+      "Guide lokal",
+      "Air mineral 1x",
+      "Driver"
+    ],
+    "exclude": []
+  }
+}

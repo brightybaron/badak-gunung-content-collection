@@ -134,6 +134,5 @@
       "Tol & parkir"
     ],
     "exclude": ["Makan di luar paket", "Keperluan Pribadi"]
-  },
-  "features": ["Homestay", "Tiket", "Dokumentasi", "Guide"]
+  }
 }

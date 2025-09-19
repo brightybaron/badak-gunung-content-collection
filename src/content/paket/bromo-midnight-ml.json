@@ -1,6 +1,6 @@
 {
   "title": "Bromo Midnight Trip",
-  "slug": "bromo-midnight-trip",
+  "slug": "bromo-midnight-ml",
   "jenistrip": "Private",
   "meetingpoint": ["Malang"],
   "location": "Bromo",
@@ -92,6 +92,5 @@
       "Sewa kuda / jaket di Bromo",
       "Dokumentasi foto"
     ]
-  },
-  "features": ["Tiket", "Dokumentasi", "Guide", "Penjemputan kota"]
+  }
 }

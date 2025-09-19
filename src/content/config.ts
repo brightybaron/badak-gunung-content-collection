@@ -2,13 +2,11 @@
 import { defineCollection, z } from "astro:content";
 
 const paketCollection = defineCollection({
-  type: "data", // Gunakan 'data' untuk JSON (bukan 'content' yang untuk Markdown)
+  type: "data", // Gunakan 'data' untuk JSON ('content' yang untuk Markdown)
   schema: z.object({
     title: z.string(),
     slug: z.string(),
     jenistrip: z.string(),
-    // category: z.string(),
-    // ispromo: z.boolean(),
     meetingpoint: z.array(z.string()),
     location: z.string(),
     descriptions: z.array(
@@ -38,7 +36,6 @@ const paketCollection = defineCollection({
       include: z.array(z.string()),
       exclude: z.array(z.string()),
     }),
-    features: z.array(z.string()),
   }),
 });
 

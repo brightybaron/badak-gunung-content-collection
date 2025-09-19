@@ -25,13 +25,27 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 
 const entries = await getCollection("paket");
-const entry = entries.find((item: any) => item.data.slug === slug);
+let entry = entries.find((item: any) => item.data.slug === slug);
+
+// Handle bromo-midnight default to Malang version
+if (slug === "bromo-midnight") {
+  entry = entries.find((item: any) => item.data.slug === "bromo-midnight-ml");
+}
 
 if (!entry) {
   throw new Error(`No domestik paket found for slug: ${slug}`);
 }
 
 const { data } = entry;
+
+// Check if this is a bromo-midnight variant
+const isBromoMidnight = slug?.includes("bromo-midnight");
+const currentMeetingPoint =
+  slug === "bromo-midnight-ml" || slug === "bromo-midnight"
+    ? "Malang"
+    : slug === "bromo-midnight-sby"
+      ? "Surabaya"
+      : null;
 
 export const prerender = true;
 ---
@@ -88,7 +102,27 @@ export const prerender = true;
             </td>
             <td class="p-2 border border-gray-400">
               {
-                data.meetingpoint.length === 1 ? (
+                isBromoMidnight ? (
+                  <div>
+                    <select
+                      id="meeting-point-select"
+                      class="w-full p-2 border border-gray-300 rounded-md bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-sm font-medium"
+                    >
+                      <option
+                        value="Malang"
+                        selected={currentMeetingPoint === "Malang"}
+                      >
+                        Malang
+                      </option>
+                      <option
+                        value="Surabaya"
+                        selected={currentMeetingPoint === "Surabaya"}
+                      >
+                        Surabaya
+                      </option>
+                    </select>
+                  </div>
+                ) : data.meetingpoint.length === 1 ? (
                   <p class="font-semibold">{data.meetingpoint[0]}</p>
                 ) : (
                   <>
@@ -286,6 +320,7 @@ export const prerender = true;
     </div>
     <div class="flex justify-center mt-8">
       <a
+        id="whatsapp-link"
         class="inline-flex gap-x-1 items-center justify-center w-fit mt-2 py-2 px-4 bg-amber-400 hover:bg-deep-blue text-black hover:text-white hover:scale-105 ring-1 ring-gray-800 rounded-full font-semibold transition-all duration-300"
         href={`https://wa.me/6285157276433/?text=Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${encodeURIComponent(data.title || "")}`}
         target="_blank"
@@ -297,3 +332,58 @@ export const prerender = true;
     </div>
   </section>
 </MainLayout>
+
+<script>
+  // Add functionality for meeting point selector with page reload
+  document.addEventListener("DOMContentLoaded", function () {
+    const meetingPointSelect = document.getElementById(
+      "meeting-point-select"
+    ) as HTMLSelectElement;
+    const whatsappLink = document.getElementById(
+      "whatsapp-link"
+    ) as HTMLAnchorElement;
+
+    if (meetingPointSelect && whatsappLink) {
+      // Update WhatsApp link based on current selection
+      function updateWhatsAppLink() {
+        const selectedPoint = meetingPointSelect.value;
+        const packageTitle = (
+          document.querySelector("h1") as HTMLHeadingElement
+        ).textContent;
+
+        let message = `Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${encodeURIComponent(packageTitle || "")}`;
+
+        if (selectedPoint) {
+          message += `%20dengan%20meeting%20point%20di%20${encodeURIComponent(selectedPoint)}`;
+        }
+
+        whatsappLink.href = `https://wa.me/6285157276433/?text=${message}`;
+      }
+
+      // Handle meeting point change with page reload
+      meetingPointSelect.addEventListener("change", function () {
+        const selectedPoint = this.value;
+        const currentUrl = window.location.pathname;
+
+        // Determine the new slug based on selection
+        let newSlug;
+        if (selectedPoint === "Malang") {
+          newSlug = "bromo-midnight-ml";
+        } else if (selectedPoint === "Surabaya") {
+          newSlug = "bromo-midnight-sby";
+        }
+
+        // Reload page with new slug if it's different from current
+        if (newSlug) {
+          const newUrl = currentUrl.replace(/\/[^\/]+$/, `/${newSlug}`);
+          if (newUrl !== currentUrl) {
+            window.location.href = newUrl;
+          }
+        }
+      });
+
+      // Initialize WhatsApp link on page load
+      updateWhatsAppLink();
+    }
+  });
+</script>

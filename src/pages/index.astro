@@ -50,16 +50,34 @@ const features = [
 
 import { getCollection } from "astro:content";
 
-const paketData = await getCollection("paket");
+const allPaketData = await getCollection("paket");
 
-const cardData = (entry: any) => ({
-  image: entry.data.images[0].url,
-  title: entry.data.title,
-  slug: entry.id,
-  meetingpoint: entry.data.meetingpoint,
-  price: entry.data.price,
-  features: entry.data.fasilitas.include,
+// Filter packages to avoid showing multiple bromo-midnight variants
+const paketData = allPaketData.filter((entry: any) => {
+  const slug = entry.id;
+  // Exclude the specific variants, but keep other packages
+  return (
+    !slug.includes("bromo-midnight-ml") && !slug.includes("bromo-midnight-sby")
+  );
 });
+
+const cardData = (entry: any) => {
+  let slug = entry.id;
+
+  // For the base bromo-midnight package, redirect to the Malang version
+  if (slug === "bromo-midnight") {
+    slug = "bromo-midnight-ml";
+  }
+
+  return {
+    image: entry.data.images[0].url,
+    title: entry.data.title,
+    slug: slug,
+    meetingpoint: entry.data.meetingpoint,
+    price: entry.data.price,
+    features: entry.data.fasilitas.include,
+  };
+};
 ---
 
 <MainLayout>

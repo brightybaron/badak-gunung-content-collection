@@ -33,15 +33,19 @@
     {
       "items": [
         {
-          "time": "23.00",
+          "time": "21.00",
           "details": "Penjemputan di meeting point"
         },
         {
-          "time": "00.00",
+          "time": "23.00",
           "details": "Perjalanan menuju Kawasan Bromo"
         },
         {
-          "time": "03.30",
+          "time": "02.30",
+          "details": "Tiba di tempat transit jip Bromo"
+        },
+        {
+          "time": "04.00",
           "details": "Tiba di Surise View Point"
         },
         {
@@ -69,7 +73,15 @@
           "details": "Perjalanan kembali menuju meeting point"
         },
         {
-          "time": "12.00",
+          "time": "11.00",
+          "details": "Tiba di tempat transit jip Bromo"
+        },
+        {
+          "time": "11.30",
+          "details": "Perjalanan kembali menuju meeting point"
+        },
+        {
+          "time": "14.00",
           "details": "Tiba di meeting point. Explore Bromo berakhir. Sayonara!"
         }
       ],
@@ -92,6 +104,5 @@
       "Sewa kuda / jaket di Bromo",
       "Dokumentasi foto"
     ]
-  },
-  "features": ["Transportasi PP", "Tiket", "Guide"]
+  }
 }
