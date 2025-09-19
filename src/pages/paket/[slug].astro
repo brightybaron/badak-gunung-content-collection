@@ -343,15 +343,16 @@ export const prerender = true;
       "whatsapp-link"
     ) as HTMLAnchorElement;
 
+    console.log("Script loaded, select element:", meetingPointSelect);
+    console.log("Current URL:", window.location.href);
+
     if (meetingPointSelect && whatsappLink) {
       // Update WhatsApp link based on current selection
       function updateWhatsAppLink() {
         const selectedPoint = meetingPointSelect.value;
-        const packageTitle = (
-          document.querySelector("h1") as HTMLHeadingElement
-        ).textContent;
+        const packageTitle = document.querySelector("h1")?.textContent || "";
 
-        let message = `Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${encodeURIComponent(packageTitle || "")}`;
+        let message = `Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${encodeURIComponent(packageTitle)}`;
 
         if (selectedPoint) {
           message += `%20dengan%20meeting%20point%20di%20${encodeURIComponent(selectedPoint)}`;
@@ -361,9 +362,9 @@ export const prerender = true;
       }
 
       // Handle meeting point change with page reload
-      meetingPointSelect.addEventListener("change", function () {
-        const selectedPoint = this.value;
-        const currentUrl = window.location.pathname;
+      meetingPointSelect.addEventListener("change", function (e: any) {
+        const selectedPoint = e.target.value;
+        console.log("Selected point:", selectedPoint);
 
         // Determine the new slug based on selection
         let newSlug;
@@ -373,17 +374,33 @@ export const prerender = true;
           newSlug = "bromo-midnight-sby";
         }
 
-        // Reload page with new slug if it's different from current
         if (newSlug) {
-          const newUrl = currentUrl.replace(/\/[^\/]+$/, `/${newSlug}`);
-          if (newUrl !== currentUrl) {
-            window.location.href = newUrl;
+          // Construct new URL by replacing only the slug part
+          const newPath = `/paket/${newSlug}`;
+
+          console.log("Current path:", window.location.pathname);
+          console.log("New path:", newPath);
+
+          // Only reload if the path is actually different
+          if (newPath !== window.location.pathname) {
+            console.log("Redirecting to:", newPath);
+            window.location.href = newPath;
+          } else {
+            console.log("Same path, just updating WhatsApp link");
+            updateWhatsAppLink();
           }
         }
       });
 
       // Initialize WhatsApp link on page load
       updateWhatsAppLink();
+    } else {
+      console.log(
+        "Elements not found - select:",
+        !!meetingPointSelect,
+        "whatsapp:",
+        !!whatsappLink
+      );
     }
   });
 </script>
