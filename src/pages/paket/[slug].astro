@@ -53,7 +53,9 @@ export const prerender = true;
 <MainLayout pageTitle={data.title}>
   <section class="max-w-7xl mx-auto lg:px-8 sm:px-6 px-4 dark:text-[#f3f4f6]">
     <h1 class="sm:text-4xl text-3xl font-bold mb-4">{data.title}</h1>
-    <div class="flex flex-wrap gap-4 text-sm font-medium text-[#9ca3af]">
+    <div
+      class="flex flex-wrap gap-4 text-sm font-medium text-gray-800 dark:text-[#9ca3af]"
+    >
       <div class="flex items-center">
         <IconMapPin />
         {data.location}
@@ -303,7 +305,9 @@ export const prerender = true;
                   const pax = data.price.length + 1 - index;
                   return (
                     <tr class="text-center">
-                      <td class="px-4 py-2 border">{pax}</td>
+                      <td class="px-4 py-2 border">
+                        {data.price.length > 1 ? `${pax}` : `1`}
+                      </td>
                       <td class="px-4 py-2 border font-medium">
                         Rp. {`${Number(item).toLocaleString("id-ID")}.000`}
                       </td>
@@ -314,7 +318,11 @@ export const prerender = true;
           </tbody>
         </table>
         <p class="sm:text-sm text-xs italic">
-          {`*Lebih dari ${data.price.length + 1} orang, silakan hubungi kami.`}
+          {
+            data.jenistrip === "Private"
+              ? `*Lebih dari ${data.price.length + 1} orang, silakan hubungi kami.`
+              : ""
+          }
         </p>
       </div>
     </div>
@@ -342,9 +350,6 @@ export const prerender = true;
     const whatsappLink = document.getElementById(
       "whatsapp-link"
     ) as HTMLAnchorElement;
-
-    console.log("Script loaded, select element:", meetingPointSelect);
-    console.log("Current URL:", window.location.href);
 
     if (meetingPointSelect && whatsappLink) {
       // Update WhatsApp link based on current selection

@@ -76,11 +76,9 @@ const bucketUrl = "/images";
     <div class="flex items-center justify-between">
       <div class="flex flex-col">
         {
-          pathname === "/" ? (
-            ""
-          ) : (
+          pathname === "/" ? null : (
             <span class="text-sm italic font-medium flex leading-2 text-gray-600 dark:text-gray-100">
-              Mulai dari
+              {`${price.length > 1 ? "Mulai dari" : "Harga"}`}
             </span>
           )
         }

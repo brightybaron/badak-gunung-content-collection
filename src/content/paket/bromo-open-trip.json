@@ -1,7 +1,7 @@
 {
-  "title": "Bromo Midnight Trip",
-  "slug": "bromo-midnight-sby",
-  "jenistrip": "Private",
+  "title": "Bromo Open Trip",
+  "slug": "bromo-open-trip",
+  "jenistrip": "Open",
   "meetingpoint": ["Surabaya", "Sidoarjo", "Gresik"],
   "location": "Bromo",
   "descriptions": [
@@ -16,10 +16,10 @@
     }
   ],
   "images": [
-    { "url": "/bromo-2.jpeg" },
-    { "url": "/bromo-1.webp" },
     { "url": "/bromo-3.webp" },
-    { "url": "/bromo-4.webp" }
+    { "url": "/bromo-1.webp" },
+    { "url": "/bromo-4.webp" },
+    { "url": "/bromo-2.jpeg" }
   ],
   "destinasi": [
     "Sunrise View Point",
@@ -88,13 +88,12 @@
       "title": "Explore Bromo"
     }
   ],
-  "price": ["345", "420", "525", "700", "1050"],
+  "price": ["380"],
   "fasilitas": {
     "include": [
       "Tiket masuk",
       "Jip Bromo",
       "Transportasi PP",
-      "Air mineral 1x",
       "Guide lokal",
       "Sopir"
     ],
