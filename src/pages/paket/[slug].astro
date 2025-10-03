@@ -317,13 +317,18 @@ export const prerender = true;
             }
           </tbody>
         </table>
-        <p class="sm:text-sm text-xs italic">
-          {
-            data.jenistrip === "Private"
-              ? `*Lebih dari ${data.price.length + 1} orang, silakan hubungi kami.`
-              : ""
-          }
-        </p>
+        <div class="space-y-2">
+          <p class="sm:text-sm text-xs italic">
+            {
+              data.jenistrip === "Private"
+                ? `*Lebih dari ${data.price.length + 1} orang, silakan hubungi kami.`
+                : ""
+            }
+          </p>
+          <p class="sm:text-sm text-xs italic">
+            *Untuk turis WNA dikenakan tambahan biaya <b>Rp. 255.000</b> per pax
+          </p>
+        </div>
       </div>
     </div>
     <div class="flex justify-center mt-8">
