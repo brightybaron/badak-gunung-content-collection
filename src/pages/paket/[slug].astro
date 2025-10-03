@@ -289,7 +289,7 @@ export const prerender = true;
     <div class="border border-gray-300 rounded-lg sm:p-6 p-4">
       <h2 class="title-heading">Pricelist</h2>
       <div class="overflow-x-auto">
-        <table class="w-full mb-4">
+        <table class="w-full">
           <thead>
             <tr class="bg-deep-blue dark:bg-[#6b7280] text-white text-center">
               <th class="px-4 py-2 font-semibold border">Jumlah Peserta</th>
@@ -317,13 +317,16 @@ export const prerender = true;
             }
           </tbody>
         </table>
-        <div class="space-y-2">
+        <div class="space-y-2 mt-8">
           <p class="sm:text-sm text-xs italic">
             {
               data.jenistrip === "Private"
                 ? `*Lebih dari ${data.price.length + 1} orang, silakan hubungi kami.`
                 : ""
             }
+          </p>
+          <p class="sm:text-sm text-xs italic">
+            *Untuk periode high season dikenakan tambahan biaya <b>20%</b> per pax
           </p>
           <p class="sm:text-sm text-xs italic">
             *Untuk turis WNA dikenakan tambahan biaya <b>Rp. 255.000</b> per pax
