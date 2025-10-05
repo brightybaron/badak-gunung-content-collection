@@ -39,6 +39,36 @@ const paketCollection = defineCollection({
   }),
 });
 
+const faqCollection = defineCollection({
+  type: "data",
+  schema: z.array(
+    z.object({
+      title: z.string(),
+      items: z.array(
+        z.object({
+          details: z.string(),
+        })
+      ),
+    })
+  ),
+});
+
+const termsCollection = defineCollection({
+  type: "data",
+  schema: z.array(
+    z.object({
+      title: z.string(),
+      items: z.array(
+        z.object({
+          details: z.string(),
+        })
+      ),
+    })
+  ),
+});
+
 export const collections = {
   paket: paketCollection,
+  faq: faqCollection,
+  terms: termsCollection,
 };

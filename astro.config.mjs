@@ -15,6 +15,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  site: "https://badakgunung.pages.dev",
+
   integrations: [
     react(),
     sitemap({

@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Ketentuan Pendaftaran dan Pembayaran",
+    "items": [
+      {
+        "details": "Membayar uang muka/DP minimal 50% dari total tagihan atau dapat melunasinya sekaligus dan dibayarkan paling lambat 10 hari sebelum keberangkatan."
+      },
+      {
+        "details": "Pelunasan biaya trip dibayarkan maksimal pada hari H sebelum berangkat trip."
+      },
+      {
+        "details": "Badak Gunung berhak membatalkan trip dengan pertimbangan-pertimbangan tertentu di luar kemampuan kami dan uang DP peserta akan dikembalikan 100%."
+      },
+      {
+        "details": "Itinerary/jadwal acara bisa berubah tergantung cuaca dan kondisi alam serta kondisi lalu lintas."
+      }
+    ]
+  },
+  {
+    "title": "Pembatalan dan Reschedule",
+    "items": [
+      {
+        "details": "Tidak ada pengembalian uang muka/DP yang sudah dibayarkan oleh peserta trip yang membatalkan keikutsertaannya secara sepihak."
+      },
+      {
+        "details": "Reschedule / pergantian jadwal trip diperkenankan, maksimal konfirmasi 7 hari sebelum keberangkatan. Kurang dari 7 hari peserta dianggap membatalkan trip secara sepihak."
+      },
+      {
+        "details": "Jika terjadi pembatalan atau pergantian tanggal trip dikarenakan force majeur seperti bencana alam, penutupan tempat wisata atau sebab lain di luar kendali kami, maka biaya pendaftaran akan dikembalikan."
+      },
+      {
+        "details": "Pembatalan dan penundaan trip hanya berlaku untuk jadwal trip low season."
+      },
+      {
+        "details": "Pembatalan/penundaan trip pada high season, DP/uang muka tidak dapat dikembalikan."
+      }
+    ]
+  }
+]
