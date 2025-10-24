@@ -20,6 +20,6 @@
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
-    "@types/node": "^24.9.1"
+    "@types/node": "^22.15.17"
   }
 }
